@@ -1,0 +1,20 @@
+# Event Intelligence RAG System - OPTIONAL Requirements
+# Install after core: pip install -r requirements-optional.txt
+
+# Development & Notebooks
+jupyter>=1.0.0
+ipython>=8.0.0
+ipykernel>=6.0.0
+
+# Testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+
+# Code Quality
+black>=23.0.0
+flake8>=6.0.0
+pylint>=2.17.0
+
+# API & REST (Optional)
+fastapi>=0.100.0
+uvicorn>=0.23.0

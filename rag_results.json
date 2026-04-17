@@ -1,0 +1,435 @@
+{
+  "timestamp": "2026-04-17",
+  "system": "Event Intelligence RAG",
+  "models": {
+    "retrieval": "sentence-transformers/all-MiniLM-L6-v2",
+    "llm": "gpt-3.5-turbo (simulated)"
+  },
+  "results": [
+    {
+      "question": "What critical alarms occurred from component 103?",
+      "status": "success",
+      "context_count": 5,
+      "context_quality": {
+        "level": "good",
+        "confidence": 0.8,
+        "avg_similarity": 0.3402,
+        "unique_alarms": 5,
+        "chunk_count": 5
+      },
+      "context_chunks": [
+        {
+          "text": "Alarm ID 37764: CRITICAL priority Building Security Malfunction Alert event. occurred on 2025-09-16 08:06:28.063000. 15, in Jurisdiction. at coordinates (12.9881, 77.5985). affecting Component 315 (System Component). Device: Public Annoncement 1 (Type: 13.0).",
+          "alarm_id": 37764,
+          "priority": "Critical",
+          "component_id": 315,
+          "similarity": 0.3888,
+          "month": "September",
+          "alarm_name": "Building Security Malfunction Alert",
+          "category": "Smart Building",
+          "device": "13.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 153: CRITICAL priority Fire Emergency event. occurred on 2025-05-20 19:51:37.910000. at coordinates (24.4667, 54.3667). affecting Component 103 (IoT Sensor Hub). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 153,
+          "priority": "Critical",
+          "component_id": 103,
+          "similarity": 0.3809,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 21019: CRITICAL priority Building Security Malfunction Alert event. occurred on 2025-07-09 06:39:24.950000. 46Shivaji, Vasanth Nagar, NagarBengaluru, Bengaluru, Karnataka 560051, in Jurisdiction. at coordinates (12.9881, 77.5985). affecting Component 311 (System Component).",
+          "alarm_id": 21019,
+          "priority": "Critical",
+          "component_id": 311,
+          "similarity": 0.3291,
+          "month": "July",
+          "alarm_name": "Building Security Malfunction Alert",
+          "category": "Smart Building",
+          "device": "312.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 25288: CRITICAL priority Building Security Malfunction Alert event. occurred on 2025-07-31 06:29:35.937000. 46Shivaji, Vasanth Nagar, NagarBengaluru, Bengaluru, Karnataka 560051, in Jurisdiction. at coordinates (12.9881, 77.5985). affecting Component 311 (System Component).",
+          "alarm_id": 25288,
+          "priority": "Critical",
+          "component_id": 311,
+          "similarity": 0.3104,
+          "month": "July",
+          "alarm_name": "Building Security Malfunction Alert",
+          "category": "Smart Building",
+          "device": "1.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 20572: CRITICAL priority Fire Emergency event. occurred on 2025-07-04 05:24:11.730000. Abu Dhabi - Zone 1 - Abu Dhabi - United Arab Emirates, in Al Dafra. at coordinates (21.4186, 96.1084). affecting Component 103 (IoT Sensor Hub). Device: SHAMKHA-TRUCK AR_10902 (Type: 13.0).",
+          "alarm_id": 20572,
+          "priority": "Critical",
+          "component_id": 103,
+          "similarity": 0.2918,
+          "month": "July",
+          "alarm_name": "Fire Emergency",
+          "category": "Fire Emergency",
+          "device": "13.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        }
+      ],
+      "answer": "Based on the operational data:\n\nComponents involved: 103, 311, 315\nFound 5 critical event(s).\n\nPriority levels: Critical\nTime periods: September, July, May\n\nTop Result: Alarm #37764 (Critical)\nDetails: Alarm ID 37764: CRITICAL priority Building Security Malfunction Alert event. occurred on 2025-09-16 08:06:28.063000. 15, in Jurisdiction. at coordinat...\n",
+      "sources": [
+        "Alarm #37764",
+        "Alarm #153",
+        "Alarm #21019"
+      ]
+    },
+    {
+      "question": "How many fire emergency events happened in May?",
+      "status": "success",
+      "context_count": 5,
+      "context_quality": {
+        "level": "fair",
+        "confidence": 0.6,
+        "avg_similarity": 0.16226000000000002,
+        "unique_alarms": 5,
+        "chunk_count": 5
+      },
+      "context_chunks": [
+        {
+          "text": "Alarm ID 411: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:44.410000. at coordinates (24.3309, 54.5691). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 411,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.1639,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 246: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:42.327000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 246,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.1638,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 252: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:41.500000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 252,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.163,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 244: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:42.340000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 244,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.1616,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 194: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:41.510000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 194,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.159,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        }
+      ],
+      "answer": "Based on the operational data:\n\nFound 5 relevant event(s) in the data.\n\nPriority levels: High\nTime periods: May\n\nTop Result: Alarm #411 (High)\nDetails: Alarm ID 411: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:44.410000. at coordinates (24.3309, 54.5691). affecting Component 100 (...\n\n[!] Note: Limited context available. Confidence: 60%\n",
+      "sources": [
+        "Alarm #411",
+        "Alarm #246",
+        "Alarm #252"
+      ]
+    },
+    {
+      "question": "Which components experienced water leakage issues?",
+      "status": "success",
+      "context_count": 5,
+      "context_quality": {
+        "level": "insufficient",
+        "confidence": 0.3,
+        "avg_similarity": 0.01584,
+        "unique_alarms": 5,
+        "chunk_count": 5
+      },
+      "context_chunks": [
+        {
+          "text": "Alarm ID 38037: HIGH priority Water Leakage event. occurred on 2025-09-19 18:34:21.973000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77.5766). affecting Component 313 (Secondary Monitor). Device: wmfls-10 (Type: 303.0).",
+          "alarm_id": 38037,
+          "priority": "High",
+          "component_id": 313,
+          "similarity": 0.0215,
+          "month": "September",
+          "alarm_name": "Water Leakage",
+          "category": "Smart Water",
+          "device": "303.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 38046: HIGH priority Water Leakage event. occurred on 2025-09-20 09:08:40.470000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77.5766). affecting Component 312 (Primary Monitor). Device: wmfls-10 (Type: 303.0).",
+          "alarm_id": 38046,
+          "priority": "High",
+          "component_id": 312,
+          "similarity": 0.0164,
+          "month": "September",
+          "alarm_name": "Water Leakage",
+          "category": "Smart Water",
+          "device": "303.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 36623: HIGH priority Water Leakage event. occurred on 2025-08-22 11:16:04.253000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77.5766). affecting Component 313 (Secondary Monitor). Device: wmfls-10 (Type: 303.0).",
+          "alarm_id": 36623,
+          "priority": "High",
+          "component_id": 313,
+          "similarity": 0.0158,
+          "month": "August",
+          "alarm_name": "Water Leakage",
+          "category": "Smart Water",
+          "device": "303.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 36099: HIGH priority Water Leakage event. occurred on 2025-08-19 10:51:21.470000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77.5766). affecting Component 313 (Secondary Monitor). Device: wmfls-10 (Type: 303.0).",
+          "alarm_id": 36099,
+          "priority": "High",
+          "component_id": 313,
+          "similarity": 0.0128,
+          "month": "August",
+          "alarm_name": "Water Leakage",
+          "category": "Smart Water",
+          "device": "303.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 36096: HIGH priority Water Leakage event. occurred on 2025-08-19 10:51:05.057000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77.5766). affecting Component 313 (Secondary Monitor). Device: wmfls-10 (Type: 303.0).",
+          "alarm_id": 36096,
+          "priority": "High",
+          "component_id": 313,
+          "similarity": 0.0127,
+          "month": "August",
+          "alarm_name": "Water Leakage",
+          "category": "Smart Water",
+          "device": "303.0",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        }
+      ],
+      "answer": "Based on the operational data:\n\nComponents involved: 312, 313\n\nPriority levels: High\nTime periods: August, September\n\nTop Result: Alarm #38037 (High)\nDetails: Alarm ID 38037: HIGH priority Water Leakage event. occurred on 2025-09-19 18:34:21.973000. Banglore, in BangloreUrbanJuri. at coordinates (13.0147, 77...\n\n[!] Note: Limited context available. Confidence: 30%\n",
+      "sources": [
+        "Alarm #38037",
+        "Alarm #38046",
+        "Alarm #36623"
+      ]
+    },
+    {
+      "question": "Tell me about security malfunction alerts",
+      "status": "success",
+      "context_count": 5,
+      "context_quality": {
+        "level": "insufficient",
+        "confidence": 0.3,
+        "avg_similarity": 0.00284,
+        "unique_alarms": 5,
+        "chunk_count": 5
+      },
+      "context_chunks": [
+        {
+          "text": "Alarm ID 25525: LOW priority Driver Not Identified ADAS event. occurred on 2025-08-04 09:14:05.200000. string, in Abu Dhabi. at coordinates (12.9834, 77.5987). affecting Component 101 (Database Server). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Category: Fire Emergency.",
+          "alarm_id": 25525,
+          "priority": "Low",
+          "component_id": 101,
+          "similarity": 0.0104,
+          "month": "August",
+          "alarm_name": "Driver Not Identified ADAS",
+          "category": "Fire Emergency",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 33900: LOW priority Driver Not Identified ADAS event. occurred on 2025-08-05 14:07:17. string, in Abu Dhabi. at coordinates (54.3773, 24.4539). affecting Component 101 (Database Server). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Category: Fire Emergency.",
+          "alarm_id": 33900,
+          "priority": "Low",
+          "component_id": 101,
+          "similarity": 0.0041,
+          "month": "August",
+          "alarm_name": "Driver Not Identified ADAS",
+          "category": "Fire Emergency",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 25021: LOW priority Driver Not Identified ADAS event. occurred on 2025-07-30 07:19:24.947000. string, in Abu Dhabi. at coordinates (12.9834, 77.5987). affecting Component 101 (Database Server). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Category: Fire Emergency.",
+          "alarm_id": 25021,
+          "priority": "Low",
+          "component_id": 101,
+          "similarity": 0.0015,
+          "month": "July",
+          "alarm_name": "Driver Not Identified ADAS",
+          "category": "Fire Emergency",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 25024: LOW priority Driver Not Identified ADAS event. occurred on 2025-07-30 07:29:02.880000. string, in Abu Dhabi. at coordinates (12.9834, 77.5987). affecting Component 101 (Database Server). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Category: Fire Emergency.",
+          "alarm_id": 25024,
+          "priority": "Low",
+          "component_id": 101,
+          "similarity": -0.0009,
+          "month": "July",
+          "alarm_name": "Driver Not Identified ADAS",
+          "category": "Fire Emergency",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        },
+        {
+          "text": "Alarm ID 25020: LOW priority Driver Not Identified ADAS event. occurred on 2025-07-30 07:08:37.973000. string, in Abu Dhabi. at coordinates (12.9834, 77.5987). affecting Component 101 (Database Server). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Category: Fire Emergency.",
+          "alarm_id": 25020,
+          "priority": "Low",
+          "component_id": 101,
+          "similarity": -0.0009,
+          "month": "July",
+          "alarm_name": "Driver Not Identified ADAS",
+          "category": "Fire Emergency",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 2
+        }
+      ],
+      "answer": "Based on the operational data:\n\n\nPriority levels: Low\nTime periods: August, July\n\nTop Result: Alarm #25525 (Low)\nDetails: Alarm ID 25525: LOW priority Driver Not Identified ADAS event. occurred on 2025-08-04 09:14:05.200000. string, in Abu Dhabi. at coordinates (12.9834, ...\n\n[!] Note: Limited context available. Confidence: 30%\n",
+      "sources": [
+        "Alarm #25525",
+        "Alarm #33900",
+        "Alarm #25021"
+      ]
+    },
+    {
+      "question": "Why do we have so many high-priority incidents?",
+      "status": "success",
+      "context_count": 5,
+      "context_quality": {
+        "level": "insufficient",
+        "confidence": 0.3,
+        "avg_similarity": 0.03554,
+        "unique_alarms": 5,
+        "chunk_count": 5
+      },
+      "context_chunks": [
+        {
+          "text": "Alarm ID 244: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:42.340000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 244,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.0552,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 291: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:39.727000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 291,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.0372,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 289: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:39.747000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 289,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.036,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 268: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:40.010000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 268,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.029,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        },
+        {
+          "text": "Alarm ID 394: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:43.877000. at coordinates (24.4667, 54.3667). affecting Component 100 (Enterprise System). Responding agencies: Primary: Police | Secondary: Civil Defence, EMS. Status: 5. Event Status: In progress.",
+          "alarm_id": 394,
+          "priority": "High",
+          "component_id": 100,
+          "similarity": 0.0203,
+          "month": "May",
+          "alarm_name": "Fire Emergency",
+          "category": "Unknown",
+          "device": "Unknown",
+          "chunk_sequence": 1,
+          "total_chunks": 1
+        }
+      ],
+      "answer": "Based on the operational data:\n\n\nPriority levels: High\nTime periods: May\n\nTop Result: Alarm #244 (High)\nDetails: Alarm ID 244: HIGH priority Fire Emergency event. occurred on 2025-05-21 09:51:42.340000. at coordinates (24.4667, 54.3667). affecting Component 100 (...\n\n[!] Note: Limited context available. Confidence: 30%\n",
+      "sources": [
+        "Alarm #244",
+        "Alarm #291",
+        "Alarm #289"
+      ]
+    }
+  ]
+}
