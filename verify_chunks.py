@@ -1,10 +1,41 @@
 """
 Text Chunking Verification & Analysis
-Detailed inspection of created chunks
+=====================================
+
+Module: verify_chunks
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Comprehensive analysis tool for verifying text chunks created in Step 3.
+    Validates chunking strategy, displays statistics, and checks data integrity.
+
+Analysis Coverage:
+    - Total chunk count and distribution
+    - Empty chunk detection
+    - Chunk size statistics
+    - Event coverage
+    - Metadata presence
+    - Overlap effectiveness
+
+Usage:
+    python verify_chunks.py
+
+Output:
+    console
+    - Chunking summary statistics
+    - Sample chunks display
+    - Data quality report
+
+Dependencies:
+    - sqlite3 (stdlib)
+    - pathlib (stdlib)
 """
 
 import sqlite3
 from pathlib import Path
+from typing import Optional
 
 DB_FILE = Path(__file__).parent / 'event_intelligence.db'
 

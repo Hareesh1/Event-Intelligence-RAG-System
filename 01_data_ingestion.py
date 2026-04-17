@@ -1,6 +1,40 @@
 """
-Step 1: Data Ingestion & SQL Setup
-Load CSV data into SQLite database with proper schema
+Step 1: Data Ingestion & SQL Database Setup
+============================================
+
+Module: 01_data_ingestion
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    First step of RAG pipeline. Loads event CSV data into SQLite database
+    with optimized schema for efficient querying and filtering. Creates
+    indexed tables for fast retrieval and metadata operations.
+
+Functionality:
+    - CSV data loading and validation
+    - SQLite schema creation with proper indexing
+    - Data type optimization
+    - Duplicate detection and handling
+    - Data quality checks
+    - Transaction management
+
+Input:
+    CSV file: V_EVENT_DETAILS_202512311554.csv
+    Fields: ALARM_ID, PRIORITY, COMPONENT_ID, ALARM_GENERATED_TIME, etc.
+
+Output:
+    SQLite Database: event_intelligence.db
+    Tables: event_details (indexed)
+
+Usage:
+    python 01_data_ingestion.py
+
+Dependencies:
+    - pandas
+    - sqlite3 (stdlib)
+    - pathlib (stdlib)
 """
 
 import pandas as pd
@@ -8,6 +42,7 @@ import sqlite3
 from datetime import datetime
 import logging
 from pathlib import Path
+from typing import Optional
 
 # Configure logging
 logging.basicConfig(

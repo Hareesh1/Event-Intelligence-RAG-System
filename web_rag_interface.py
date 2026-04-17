@@ -1,6 +1,40 @@
 """
 Web Interface for Event Intelligence RAG System
-Provides a Flask-based web application for querying the RAG system
+===============================================
+
+Module: web_rag_interface
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Flask-based web application providing interactive access to the Event Intelligence
+    RAG system. Offers a user-friendly interface for querying operational events,
+    filtering by priority and component, and viewing result metrics.
+
+Features:
+    - RESTful API endpoints for RAG queries
+    - Interactive HTML/JavaScript frontend
+    - Real-time streaming responses (optional)
+    - Filter support (priority, component)
+    - Result confidence visualization
+    - Markdown rendering for complex results
+
+Endpoints:
+    GET  /                      - Serve main interface page
+    POST /api/query             - Execute RAG query with filters
+    GET  /api/health            - System health check
+    GET  /api/stats             - System statistics
+
+Usage:
+    from web_rag_interface import app
+    if __name__ == '__main__':
+        app.run(debug=False, host='0.0.0.0', port=5000)
+
+Dependencies:
+    - flask >= 2.0.0
+    - complete_rag_system
+    - jinja2
 """
 
 import json
@@ -8,9 +42,13 @@ import logging
 from flask import Flask, render_template, request, jsonify
 from complete_rag_system import CompletRAGSystem
 import os
+from typing import Dict, Any
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app

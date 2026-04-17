@@ -1,12 +1,41 @@
 """
-Quick start script for the web interface
-Run this file to start the RAG web server
+Web Interface Launch Script
+===========================
+
+Module: run_web_interface
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Quick-start launcher for the Event Intelligence RAG web interface.
+    Handles dependency checking, server startup, and browser navigation.
+
+Features:
+    - Automatic Flask dependency detection
+    - Missing dependency installation
+    - Server health checking
+    - Browser auto-launch
+    - Graceful error handling
+
+Usage:
+    python run_web_interface.py
+
+Output:
+    - Launches Flask server on http://localhost:5000
+    - Opens browser to interface
+    - Displays server logs
+
+Dependencies:
+    - flask >= 2.0.0
+    - web_rag_interface
 """
 
 import subprocess
 import sys
 import webbrowser
 import time
+from typing import Optional
 
 def main():
     print("=" * 70)

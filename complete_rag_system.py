@@ -1,6 +1,37 @@
 """
-Complete RAG System Example - Production Ready
-Integrate retrieval, prompting, and LLM for Q&A
+Complete RAG System - Production Ready Implementation
+=====================================================
+
+Module: complete_rag_system
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    A comprehensive Retrieval-Augmented Generation (RAG) system for operational 
+    event intelligence. Integrates semantic retrieval, context enrichment, and 
+    LLM prompting to deliver accurate answers about critical infrastructure incidents.
+
+Features:
+    - Semantic search using sentence transformers
+    - Query expansion and context filtering
+    - Few-shot learning examples
+    - ReAct reasoning framework
+    - Confidence scoring and evidence tracking
+    - Chain-of-thought reasoning
+
+Usage:
+    >>> from complete_rag_system import CompletRAGSystem
+    >>> rag = CompletRAGSystem()
+    >>> response = rag.query("What critical alarms from component 103?")
+    >>> print(response['answer'])
+
+Dependencies:
+    - retrieval_api
+    - sentence-transformers
+    - openai (optional, for LLM generation)
+    - pandas
+    - sqlite3
 """
 
 from retrieval_api import EventRetriever
@@ -8,15 +39,28 @@ from typing import Dict, List, Optional
 import logging
 import json
 
-logging.basicConfig(level=logging.INFO)
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 
 class CompletRAGSystem:
-    """Production-ready RAG system with all features"""
+    """Production-ready RAG system with advanced retrieval and prompting.
     
-    def __init__(self):
-        """Initialize complete RAG system"""
+    Attributes:
+        retriever (EventRetriever): Vector database retriever for semantic search
+        system_instructions (str): System prompt for LLM guidance
+    """
+    
+    def __init__(self) -> None:
+        """Initialize complete RAG system with retriever and system instructions.
+        
+        Raises:
+            Exception: If vector database or SQL database cannot be accessed
+        """
         self.retriever = EventRetriever()
         
         # System instructions

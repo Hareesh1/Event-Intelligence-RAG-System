@@ -1,6 +1,38 @@
 """
-Retrieval API Module
-Clean interface for all retrieval strategies with formatting
+Event Retrieval API Module
+==========================
+
+Module: retrieval_api
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Production-ready retrieval interface for semantic search over event data.
+    Provides clean abstraction for vector database operations and SQL filtering.
+
+Features:
+    - Semantic search using sentence-transformers embeddings
+    - Priority-based filtering (Critical, High, Low)
+    - Component-based filtering
+    - Result ranking and confidence scoring
+    - Metadata enrichment
+    - Query normalization
+
+Classes:
+    EventRetriever: Main retriever class with semantic search capabilities
+
+Usage:
+    >>> from retrieval_api import EventRetriever
+    >>> retriever = EventRetriever()
+    >>> results = retriever.retrieve("critical alarms", k=5)
+    >>> for result in results:
+    >>>     print(result['text'], result['confidence_percentage'])
+
+Dependencies:
+    - chromadb >= 0.3.2
+    - sentence-transformers >= 2.2.0
+    - sqlite3 (stdlib)
 """
 
 import chromadb
@@ -9,16 +41,38 @@ from sentence_transformers import SentenceTransformer
 from typing import List, Dict, Optional
 import sqlite3
 import re
+import logging
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 PROJECT_DIR = Path(__file__).parent
 VECTOR_DB_PATH = PROJECT_DIR / 'vector_db'
 DB_FILE = PROJECT_DIR / 'event_intelligence.db'
 
 class EventRetriever:
-    """Simple, production-ready retriever for event RAG"""
+    """Production-ready retriever for semantic search over event data.
     
-    def __init__(self, model_name: str = 'sentence-transformers/all-MiniLM-L6-v2'):
-        """Initialize retriever"""
+    Integrates Chroma vector database with SQLite filtering for efficient,
+    accurate retrieval of relevant events and incident contexts.
+    
+    Attributes:
+        model (SentenceTransformer): Embedding model for encoding queries and documents
+        collection (chromadb.Collection): Vector database collection
+        sql_conn (sqlite3.Connection): Connection to event details database
+    """
+    
+    def __init__(self, model_name: str = 'sentence-transformers/all-MiniLM-L6-v2') -> None:
+        """Initialize retriever with embedding model and database connections.
+        
+        Args:
+            model_name (str): HuggingFace model identifier for sentence embeddings.
+                Default: 'sentence-transformers/all-MiniLM-L6-v2'
+                
+        Raises:
+            FileNotFoundError: If vector database or event database cannot be found
+            RuntimeError: If database connections fail
+        """
         self.model = SentenceTransformer(model_name)
         self.client = chromadb.PersistentClient(path=str(VECTOR_DB_PATH))
         self.collection = self.client.get_collection(name="event_embeddings")

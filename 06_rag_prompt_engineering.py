@@ -1,7 +1,47 @@
 """
 Step 6: RAG Prompt Engineering
-Context-grounded LLM responses with advanced prompting techniques
-Integrates: Retrieval + Few-Shot + ReAct + Insufficient Context Handling
+==============================
+
+Module: 06_rag_prompt_engineering
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Sixth step of RAG pipeline. Implements advanced LLM prompting with
+    context grounding, few-shot learning, and ReAct reasoning framework.
+    Ensures high-quality responses based on retrieved context.
+
+Prompt Features:
+    - System instructions with strict guidelines
+    - Context window management
+    - Few-shot learning examples
+    - ReAct reasoning framework
+    - Chain-of-thought prompting
+    - Confidence calibration
+    - Insufficient context handling
+
+Prompting Strategies:
+    1. Retrieval-Augmented: All answers from context
+    2. Few-Shot Learning: 2-3 examples of Q&A patterns
+    3. ReAct Style: Action-reasoning-observation loop
+    4. Chain-of-Thought: Step-by-step reasoning
+    5. Graceful Degradation: Clear "don't know" responses
+
+Input:
+    Retrieved context from EventRetriever
+    User query
+
+Output:
+    Structured response with reasoning and evidence
+
+Usage:
+    python 06_rag_prompt_engineering.py
+
+Dependencies:
+    - openai >= 1.0.0 (optional for LLM generation)
+    - retrieval_api
+    - sentence-transformers
 """
 
 from retrieval_api import EventRetriever

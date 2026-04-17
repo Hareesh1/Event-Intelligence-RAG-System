@@ -1,14 +1,50 @@
 """
-Step 3: Text Chunking
-Implement intelligent chunking strategy for optimal retrieval.
-Creates chunks from event narratives with metadata preservation and context overlap.
+Step 3: Text Chunking Strategy
+==============================
+
+Module: 03_text_chunking
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Third step of RAG pipeline. Implements intelligent chunking of event
+    narratives for optimal retrieval context. Uses semantic-aware chunking
+    with overlap to preserve context while maintaining manageable chunk sizes.
+
+Functionality:
+    - Semantic-aware sentence tokenization
+    - Sliding window chunking with configurable overlap
+    - Metadata preservation per chunk
+    - Chunk quality validation
+    - Context boundary detection
+    - Chunk indexing and sequencing
+
+Chunking Strategy:
+    - Chunk Size: 300 characters (~48-50 tokens)
+    - Overlap: 20% for context preservation
+    - Sentence-aligned boundaries
+    - Metadata attached to each chunk
+
+Input:
+    SQLite Table: event_details with event_text
+
+Output:
+    SQLite Table: event_chunks (chunk_id, alarm_id, chunk_text, metadata)
+
+Usage:
+    python 03_text_chunking.py
+
+Dependencies:
+    - sqlite3 (stdlib)
+    - re (stdlib)
 """
 
 import sqlite3
 import re
 import logging
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 # Configure logging
 logging.basicConfig(

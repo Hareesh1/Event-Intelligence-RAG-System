@@ -1,7 +1,45 @@
 """
 Step 2: Feature Engineering
-Transform raw data into rich textual representations suitable for embedding.
-Creates event_text column with narrative and structured metadata fields.
+===========================
+
+Module: 02_feature_engineering
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Second step of RAG pipeline. Transforms raw event data into rich textual
+    representations optimized for embedding and semantic search. Creates
+    narrative descriptions combining structured metadata into cohesive text.
+
+Functionality:
+    - Text normalization and cleaning
+    - Narrative generation from event data
+    - Structured metadata formatting
+    - Feature enrichment
+    - Text quality validation
+    - SQL column updates
+
+Features Created:
+    - event_text: Narrative description combining all relevant event info
+    - Component information
+    - Priority context
+    - Temporal markers
+    - Agency information
+
+Input:
+    SQLite Table: event_details
+
+Output:
+    SQLite Table: event_details (updated with event_text column)
+
+Usage:
+    python 02_feature_engineering.py
+
+Dependencies:
+    - pandas
+    - sqlite3 (stdlib)
+    - re (stdlib)
 """
 
 import sqlite3
@@ -10,6 +48,7 @@ from datetime import datetime
 import logging
 from pathlib import Path
 import re
+from typing import Optional
 
 # Configure logging
 logging.basicConfig(

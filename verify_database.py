@@ -1,6 +1,41 @@
 """
-Database Verification & Exploration
-Inspect the event_details table structure and sample data
+Database Verification & SQL Schema Validation
+==============================================
+
+Module: verify_database
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Validates the SQLite database structure, data integrity, and schema.
+    Verifies that data ingestion completed successfully with all fields populated.
+
+Verification Checks:
+    - Database file existence and accessibility
+    - Table schema validation and structure
+    - Row count statistics and distribution
+    - Data type compliance verification
+    - NULL value detection and analysis
+    - Index presence and functionality
+    - Foreign key integrity (if applicable)
+    - Sample record inspection
+
+Usage:
+    python verify_database.py
+
+Output:
+    console - Formatted verification report including:
+    - Database structure and schema
+    - Data statistics and metrics
+    - Integrity warnings and issues
+    - Sample records display
+    - Data quality assessment
+
+Dependencies:
+    - sqlite3 (Python stdlib)
+    - pandas (for data analysis)
+    - pathlib (Python stdlib)
 """
 
 import sqlite3

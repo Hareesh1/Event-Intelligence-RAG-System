@@ -1,6 +1,47 @@
 """
-Feature Engineering Verification & Analysis
-Detailed inspection of engineered features
+Feature Engineering Verification & Quality Analysis
+====================================================
+
+Module: verify_features
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Validates that feature engineering step created quality textual
+    representations. Checks event_text field for completeness, quality,
+    and proper formatting for downstream embedding and retrieval.
+
+Analysis Coverage:
+    - event_text column existence and completeness
+    - Text length distribution and statistics
+    - NULL or missing values detection
+    - Content quality assessment
+    - Metadata inclusion verification
+    - Text diversity metrics
+    - Sample narrative review
+    - Field correlation analysis
+
+Quality Checks:
+    - Minimum text length validation
+    - Metadata presence in narratives
+    - Proper formatting consistency
+    - Language quality assessment
+
+Usage:
+    python verify_features.py
+
+Output:
+    console - Comprehensive feature analysis report:
+    - Feature statistics and distribution
+    - Sample engineered narratives
+    - Quality metrics and assessment
+    - Improvement recommendations
+
+Dependencies:
+    - sqlite3 (Python stdlib)
+    - pandas (for data analysis)
+    - pathlib (Python stdlib)
 """
 
 import sqlite3

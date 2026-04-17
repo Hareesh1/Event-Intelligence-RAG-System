@@ -1,13 +1,52 @@
 """
 Step 5: Retrieval Implementation
-Advanced retrieval strategies for accurate context fetching
-Including: Top-K retrieval, HyDE, Hybrid retrieval, and smart filtering
+================================
+
+Module: 05_retrieval_implementation
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Fifth step of RAG pipeline. Implements advanced retrieval strategies
+    including semantic search, query expansion, filtering, and ranking.
+    Provides robust context retrieval for downstream LLM processing.
+
+Retrieval Strategies:
+    1. Top-K Semantic Retrieval: Direct similarity search
+    2. Hybrid Retrieval: Combining semantic + keyword matching
+    3. Query Expansion: HyDE-style query preprocessing
+    4. Smart Filtering: Priority and component-based filtering
+    5. Result Ranking: Relevance and confidence scoring
+
+Features:
+    - Configurable retrieval strategies
+    - Priority-based filtering
+    - Component filtering
+    - Result deduplication
+    - Confidence scoring
+    - Metadata enrichment
+
+Input:
+    Chroma Vector DB: event_embeddings
+    SQL Database: event_details
+
+Output:
+    Retrieved chunks with metadata and confidence scores
+
+Usage:
+    python 05_retrieval_implementation.py
+
+Dependencies:
+    - chromadb
+    - sentence-transformers
+    - sqlite3 (stdlib)
 """
 
 import chromadb
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 import sqlite3
 import re
 import logging

@@ -1,6 +1,49 @@
 """
-Vector Database Query & Retrieval Verification
-Demonstrates semantic search, filtering, and retrieval capabilities
+Vector Database Verification & Semantic Search Testing
+=======================================================
+
+Module: verify_vector_db
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Validates the Chroma vector database integrity and performs comprehensive
+    sanity checks. Tests semantic search functionality and verifies embedding
+    quality across various query types and filters.
+
+Verification Components:
+    - Vector database directory structure validation
+    - Collection existence and metadata verification
+    - Embedding count and dimension verification (384-D)
+    - Index integrity and consistency checks
+    - Similarity search functionality testing
+    - Query latency performance measurement
+    - Result relevance assessment
+    - Filter functionality validation
+
+Semantic Search Tests:
+    - Basic similarity queries
+    - Filtered queries (priority, component)
+    - Multi-query demonstrations
+    - Result ranking validation
+    - Confidence score calibration
+
+Usage:
+    python verify_vector_db.py
+
+Output:
+    console - Comprehensive verification report:
+    - Database statistics and metadata
+    - Sample semantic queries and results
+    - Performance metrics (latency, throughput)
+    - Quality assessment and recommendations
+
+Dependencies:
+    - chromadb >= 0.3.2 (vector database)
+    - sentence-transformers >= 2.2.0 (embeddings)
+    - pathlib (Python stdlib)
+    - json (Python stdlib)
 """
 
 import chromadb

@@ -1,7 +1,49 @@
 """
 Step 4: Embeddings & Vector Database
-Generate embeddings for chunks and store in vector database for semantic search.
-Uses Chroma for vector storage and sentence-transformers for embeddings.
+=====================================
+
+Module: 04_embeddings_vector_db
+Version: 1.0
+Author: Event Intelligence Team
+Date: April 2026
+
+Description:
+    Fourth step of RAG pipeline. Generates semantic embeddings for text chunks
+    and stores them in Chroma vector database for efficient semantic search.
+    Enables powerful similarity-based retrieval.
+
+Functionality:
+    - Sentence embedding generation
+    - Batch embedding processing
+    - Vector database initialization
+    - Metadata preservation
+    - Embedding validation
+    - Performance monitoring
+
+Embedding Model:
+    - Model: sentence-transformers/all-MiniLM-L6-v2
+    - Dimension: 384 (optimal for speed/quality tradeoff)
+    - Encoding: float32 vectors
+
+Vector Database:
+    - Backend: Chroma
+    - Storage: Persistent SQLite backend
+    - Collection: event_embeddings
+
+Input:
+    SQLite Table: event_chunks
+
+Output:
+    Chroma Vector DB: vector_db/ (persistent)
+    Collection: event_embeddings
+
+Usage:
+    python 04_embeddings_vector_db.py
+
+Dependencies:
+    - chromadb >= 0.3.2
+    - sentence-transformers >= 2.2.0
+    - sqlite3 (stdlib)
 """
 
 import sqlite3
@@ -10,7 +52,7 @@ import logging
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
 import json
-from typing import List, Dict
+from typing import List, Dict, Optional
 import time
 
 # Configure logging
